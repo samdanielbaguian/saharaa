@@ -1,5 +1,5 @@
 import { Model, DataTypes, Optional } from 'sequelize';
-import { sequelize } from '../config/database';
+import  sequelize  from '../config/database';
 import Order from './order';
 import Meal from './meal';
 
@@ -59,5 +59,6 @@ OrderItem.init(
     timestamps: true, // Sequelize auto-manage createdAt/updatedAt
   }
 );
+
 
 export default OrderItem;

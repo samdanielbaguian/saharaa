@@ -1,5 +1,5 @@
 import { Model, DataTypes, Optional } from 'sequelize';
-import { sequelize } from '../config/database';
+import  sequelize  from '../config/database';
 import User from './user';
 
 export interface NotificationAttributes {
@@ -57,5 +57,6 @@ Notification.init(
     timestamps: true, // Sequelize auto-manage createdAt/updatedAt
   }
 );
+
 
 export default Notification;

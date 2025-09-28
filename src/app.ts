@@ -6,8 +6,8 @@ import dotenv from 'dotenv';
 import path from 'path';
 import { errorHandler } from './middleware/errorHandler';
 import routes from './routes'; // <-- index.ts qui centralise toutes les routes
-import { env } from '../config/env';
-import { smsConfig } from '../config/sms';
+import { env } from './config/env';
+
 dotenv.config();
 
 const app = express();
@@ -22,9 +22,6 @@ app.listen(env.port, () => {
   console.log(`Serveur lancé sur le port ${env.port}`);
 });
 
-app.listen(smsConfig.port, () => {
-  console.log(`message lancé sur le port ${smsConfig.port}`);
-});
 
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 

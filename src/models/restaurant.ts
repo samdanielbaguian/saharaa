@@ -1,5 +1,5 @@
-import { Model, DataTypes, Optional } from 'sequelize';
-import { sequelize } from '../config/database';
+ import { Model, DataTypes, Optional } from 'sequelize';
+import  sequelize  from '../config/database';
 import User from './user';
 
 export interface RestaurantAttributes {
@@ -86,5 +86,6 @@ Restaurant.init(
     timestamps: true, // active createdAt/updatedAt
   }
 );
+
 
 export default Restaurant;

@@ -1,5 +1,5 @@
 import { Model, DataTypes, Optional } from 'sequelize';
-import { sequelize } from '../config/database';
+import  sequelize  from '../config/database';
 import Restaurant from './restaurant';
 
 export interface MealAttributes {
@@ -68,5 +68,6 @@ Meal.init(
     timestamps: true, // Sequelize auto-manage createdAt/updatedAt
   }
 );
+
 
 export default Meal;

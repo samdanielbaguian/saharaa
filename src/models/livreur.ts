@@ -1,5 +1,5 @@
 import { Model, DataTypes, Optional } from 'sequelize';
-import  sequelize  from '../config/database';
+import  sequelize from '../config/database';
 import User from './user';
 
 export interface LivreurAttributes {
@@ -19,6 +19,9 @@ export interface LivreurAttributes {
   last_longitude?: number;
   last_update?: Date;
   zone?: string;
+  otp?: string;
+  otpVerified?: boolean;
+  // Les timestamps seront ajoutés automatiquement par Sequelize
 }
 
 export interface LivreurCreationAttributes extends Optional<LivreurAttributes, 'id' | 'last_latitude' | 'last_longitude' | 'last_update' | 'zone'> {}
@@ -114,6 +117,15 @@ Livreur.init(
       type: DataTypes.STRING(50),
       allowNull: true,
     },
+
+    otp: {
+  type: DataTypes.STRING,
+  allowNull: false
+},
+otpVerified: {
+  type: DataTypes.BOOLEAN,
+  defaultValue: false
+}
     // Pas besoin de created_at ici, Sequelize gère createdAt/updatedAt
   },
   {
@@ -123,5 +135,7 @@ Livreur.init(
   }
 );
 
+export default Livreur;
 
 export default Livreur;
+

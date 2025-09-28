@@ -1,5 +1,5 @@
 import { Model, DataTypes, Optional } from 'sequelize';
-import { sequelize } from '../config/database';
+import  sequelize  from '../config/database';
 import Order from './order';
 import Livreur from './livreur';
 import User from './user';
@@ -66,5 +66,6 @@ Rating.init(
     timestamps: true, // Sequelize auto-manage createdAt/updatedAt
   }
 );
+
 
 export default Rating;

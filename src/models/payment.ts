@@ -1,5 +1,5 @@
 import { Model, DataTypes, Optional } from 'sequelize';
-import { sequelize } from '../config/database';
+import  sequelize  from '../config/database';
 import Order from './order';
 
 export interface PaymentAttributes {
@@ -62,5 +62,6 @@ Payment.init(
     timestamps: true, // Sequelize auto-manage createdAt/updatedAt
   }
 );
+
 
 export default Payment;

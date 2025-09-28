@@ -1,16 +1,6 @@
 import { Model, DataTypes, Optional } from 'sequelize';
-import { sequelize } from '../config/database';
-
-export interface UserAttributes {
-  id: number;
-  name: string;
-  email?: string;
-  phone?: string;
-  password_hash: string;
-  role: 'client' | 'livreur' | 'vendeur' | 'admin';
-  status: string;
-  language: string;
-}
+import sequelize  from '../config/database';
+import { UserAttributes } from './order';
 
 export interface UserCreationAttributes extends Optional<UserAttributes, 'id' | 'email' | 'phone' | 'status' | 'language'> {}
 

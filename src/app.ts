@@ -29,11 +29,11 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use('/api', routes); // Toutes tes routes seront en /api/xxx
 
 // Route de test
-app.get('/', (req, res) => {
+app.get('/', (req: Request, res: Response) => {
   res.send('API Saharaa OK');
 });
-
 // Middleware d'erreur global
 app.use(errorHandler);
+
 
 export default app;
